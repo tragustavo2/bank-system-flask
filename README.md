@@ -1,2 +1,2 @@
 # bank-system-website
-This a banking website for payment to account.
+This a demo banking website for payment to account.
