@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Banking System | Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <!-- heading -->
+    <header>
+        <h1> Banking System</h1>
+    </header>
+    <!-- navigation -->
+    <nav class="navbar">
+        <div>
+            <a href="/" class="home">Home</a>
+            <a href="/customer" class="customer">Customers</a>
+        </div>
+    </nav>
+    <!-- main -->
+    <main class="main">
+       <div>
+            <p>
+                Create a new Customer.
+            </p>
+       </div>
+       <div class="create">
+            <form action="/create" method="post">
+                <p>
+                    Name :
+                    <input type="text" placeholder="Rahul Dey" name="name" id="name"> 
+                </p>
+                <p>
+                    Email : 
+                    <input type="email" placeholder="rahul@email.com" name="email" id="email">
+                </p>
+                <p>
+                    Mobile No. :
+                    <input type="text" placeholder="1234567890" name="phone" id="phone">
+                </p>
+                <p>
+                    Deposte Amount :
+                    <input type="text" placeholder="500" name="balance" id="balance">
+                </p>
+                <p>
+                    <button type="submit" id="button-submit"> Create Account </button>
+                </p>
+            </form>
+       </div>
+    </main>
+
+</body>
+</html>

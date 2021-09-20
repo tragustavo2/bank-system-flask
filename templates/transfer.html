@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Banking System | Transfer Money</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <!-- heading -->
+    <header>
+        <h1> Banking System</h1>
+    </header>
+    <!-- navigation -->
+    <nav class="navbar">
+        <div>
+            <a href="/" class="home">Home</a>
+            <a href="/customer" class="home">Back</a>
+            <a href="/transecetion" class="customer">Transecetion History</a>
+        </div>
+    </nav>
+    <!-- main -->
+    <main >
+        <div class="main">
+            <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Account No</th>
+                  <th>Balence</th>
+                </tr>
+                {% for item in data %}
+                <tr>
+                  <td>{{item.id}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.email}}</td>
+                  <td> {{item.phone}}</td>
+                  <td>{{item.accountNo}}</td>
+                  <td>{{item.currentBalance}} </td>
+                </tr>
+                {% endfor %}
+              </table> 
+        </div>
+        <hr>
+        <div class="trans_from">
+            <h2>Transfer Money</h2>
+        {% for item in data %}
+        <form class="fromClass" action="/transfer/{{item.id}}" method="post">
+            <p>
+               <h3> Transfer From : </h3>  
+            </p>
+            <select name="transferFrom" class="dropdown">
+                <option selected class="dropdown" value="{{item.name}}">{{item.name}}</option>
+            </select>
+            <p>
+                <h3>Transfer to :</h3>
+            </p>
+            <select name="transferTo" class="dropdown">
+                <option selected class="dropdown" value="">--Select Account--</option>
+                {% for item in customers %}
+                <option class="dropdown" value="{{item.name}}">{{item.name}}</option>
+                {% endfor %}
+            </select>
+            <p>
+                <h3>Amount : </h3>
+            </p>
+            <input type="text" name="amount" id="amount">
+            <p>
+                <button type="submit" class="button">Send Money</button>
+            </p>
+        </form>
+        {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>
