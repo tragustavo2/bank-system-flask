@@ -1,22 +1,23 @@
-from flask import Flask,render_template,request,flash,redirect
+from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
-import json
 from datetime import datetime
-import secrets
+import secrets,json
+from flask_migrate import Migrate, migrate
 
 
+with open('config.json', 'r') as c:
+    params = json.load(c)["params"]
 
-with open('config.json','r') as f:
-    params = json.load(f)["params"]
-
-# flask app
 app = Flask(__name__)
 
 # configure database 
 app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://frmnolqksnizoe:a9a808953fcb81b883fd29541734ddcdf1551326ae487f4bc91a1ab93eea94f8@ec2-34-199-15-136.compute-1.amazonaws.com:5432/d8qce25uf4fg3h'
 
-# app secrete key
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+# app secrete keyframework
 secret = secrets.token_urlsafe(32)
 app.secret_key = secret
 
@@ -101,4 +102,8 @@ def create():
 
     return home()
 
-app.run(debug=True)
+
+
+if __name__=="__main__":
+	db.create_all()
+	app.run(debug=True)
