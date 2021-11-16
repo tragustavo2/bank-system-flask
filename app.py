@@ -1,18 +1,15 @@
 from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import secrets,json
+import secrets
 from flask_migrate import Migrate, migrate
 
 
-with open('config.json', 'r') as c:
-    params = json.load(c)["params"]
-
+# flask app
 app = Flask(__name__)
 
 # configure database 
-app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://frmnolqksnizoe:a9a808953fcb81b883fd29541734ddcdf1551326ae487f4bc91a1ab93eea94f8@ec2-34-199-15-136.compute-1.amazonaws.com:5432/d8qce25uf4fg3h'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 

@@ -6,7 +6,7 @@ body{
     margin: 0px;
 }
 
-header h1{
+/* header h1{
     color: blueviolet;
     text-align: center;
     font-size: 50px;
@@ -15,9 +15,9 @@ header h1{
 header{
     padding: 30px;
     background-color: rgb(226, 253, 253);
-}
+} */
 
-.navbar{
+/* .navbar{
     background-color: cornsilk;
     overflow: hidden;
 }
@@ -35,65 +35,66 @@ header{
     font-size: 24px;
     cursor: default;
     color: blue;
-}
+} */
 
-.home{
+/* .home{
     float: left;
-}
+} */
 
-.customer{
+/* .customer{
     float: right;
-}
-
+} */
+/* ok */
 #heading h2{
     margin: 10px;
     padding: 10px;
     text-align: center;
 }
-
+/* ok */
 .main div p{
     margin: 20px;
     padding: 20px;
     text-align: center;
     font-size: 25px;
 }
-
+/* ok */
 .home-button{
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px 30px;
     float: left;
 }
-
+/* ok */
 table{
     width: 100%;
 }
-
+/* ok */
 .main {
     /* width: 100%; */
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
 }
-
+/* ok */
 .main td, .main th {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
-  
+/* ok */
 .main tr:nth-child(even){background-color: #f2f2f2;}
-
+/* ok */
 .main tr:hover {background-color: #ddd;}
-
+/* ok */
 .main th {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: #04AA6D;
     color: white;
 }
-
+/* ok */
 #transfer{
     margin: 0%;
 }
+/* ok */
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -106,17 +107,18 @@ table{
     border-radius: 7px;
     box-shadow: 0 5px #999;
 }
-
+/* ok */
 .button:hover{
     color: black;
     cursor: pointer;
 }
+/* ok */
 .button:active {
     background-color: rgb(83, 216, 31);
     box-shadow: 0 5px gray;
     transform: translateY(2px);
 }
-
+/* ok */
 .trans_from{
     margin: 20px auto;
     padding: 20px;
@@ -125,15 +127,16 @@ table{
     border-radius: 7px;
     background-color: lightcyan;
 }
-
+/* ok */
 .dropdown, .fromClass input[type="text"],select{
     padding: 10px;
     font-size: 18px;
     width: 60%;
     text-align: center;
 }
-
+/* ok */
 .create{
+    text-align: center;
     margin: auto;
     background-color: #f2f2f2;
     padding: 5px 20px 15px 20px;
@@ -141,7 +144,7 @@ table{
     border-radius: 8px;
     width: 80%;
 }
-
+/* ok */
 input[type="text"],
 input[type="email"]{
     width: 80%;
@@ -151,24 +154,28 @@ input[type="email"]{
     margin: 5px;
 }
 
+/* ok */
 #button-submit{
     background-color: cornflowerblue;
     color: darkred;
     font-size: 25px;
     font-style: bold;
     font-family: ubuntu;
-    width: 100%;
+    width: 80%;
+    margin: 10px;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px rgb(228, 126, 126);
 }
+/* ok */
 #button-submit:hover{
     color: black;
     cursor: pointer;
     background-color: rgb(60, 123, 240);
 }
+/* ok */
 #button-submit:active {
     background-color: rgb(83, 216, 31);
     box-shadow: 0 5px rgb(214, 72, 72);
