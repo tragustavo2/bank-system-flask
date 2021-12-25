@@ -9,7 +9,8 @@ from flask_migrate import Migrate, migrate
 app = Flask(__name__)
 
 # configure database 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://frmnolqksnizoe:a9a808953fcb81b883fd29541734ddcdf1551326ae487f4bc91a1ab93eea94f8@ec2-34-199-15-136.compute-1.amazonaws.com:5432/d8qce25uf4fg3h'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://username:password@172.23.66.230/bankSystem'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ujvfyztmpflqtf:4a6caeb248b5cbc98dcdbcfb061d38eeaa481f1bd1499cd78a2732f4d295b8e6@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d9m27o98jihovf'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -71,13 +72,13 @@ def transfer(page_id):
                 msg = "Transfer Successful."
             else:
                 msg = "Transfer Error!"
-        return customer(msg)
+        return transecetion(msg)
     
 
 @app.route('/transecetion')
-def transecetion():
+def transecetion(msg=""):
     tr_data = Transecetion.query.filter().all()
-    return render_template('transecetion.html',data=tr_data)
+    return render_template('transecetion.html',data=tr_data,msg=msg)
 
 @app.route('/create',methods=["POST","GET"])
 def create():
@@ -96,7 +97,7 @@ def create():
         db.session.add(entry)
         db.session.commit()
 
-    return home()
+    return customer(msg="Account create Successfull!")
 
 
 

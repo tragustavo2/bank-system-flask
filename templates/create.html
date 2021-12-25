@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-white">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img src="{{url_for('static',filename='logo.png')}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
             <b> RD Banking System </b>
           </a>
@@ -38,41 +38,34 @@
               <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="/transecetion">Transecetion Details</a>
               </li>
-
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
 
-      <!-- alert -->
-      <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>RD banking system.</strong> Enter your details here.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-
     <!-- main -->
-    <br><br>
+    <div class="heading">
+      <p>
+        <h2 > Enter Customer Details </h2>
+      </p>
+    </div>
     <main class="main">
        <div class="create">
             <form action="/create" method="post">
                 <div class="form-floating mb-3 mt-4">
-                    <input type="text" class="form-control" placeholder="Rahul Dey" name="name" id="name">
+                    <input type="text" class="form-control" placeholder="Rahul Dey" name="name" required id="name" pattern="[A-Z a-z]{3,}">
                     <label for="name">Your Name</label> 
                 </div>
                 <div class="form-floating mt-4"> 
-                    <input type="email" class="form-control" placeholder="rahul@email.com" name="email" id="email">
+                    <input type="email" class="form-control" placeholder="rahul@email.com" required name="email" id="email">
                     <label for="email">Email Address</label>
                 </div>
                 <div class="form-floating mb-3 mt-4">
-                    <input type="text" class="form-control" placeholder="1234567890" name="phone" id="phone">
+                    <input type="text" class="form-control" placeholder="1234567890" required name="phone" id="phone" pattern="[0-9]{10}">
                     <label for="phone">Phone No</label>
                 </div>
                 <div class="form-floating mt-4">
-                    <input type="text" class="form-control" placeholder="500" name="balance" id="balance">
+                    <input type="number" class="form-control" placeholder="500" required name="balance" id="balance">
                     <label for="balance">Deposte Amount</label>
                 </div>
                 <div class = "form-floating mt-3">

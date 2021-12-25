@@ -45,7 +45,7 @@ header{
     float: right;
 } */
 /* ok */
-#heading h2{
+.heading h2{
     margin: 10px;
     padding: 10px;
     text-align: center;
@@ -146,14 +146,19 @@ table{
 }
 /* ok */
 input[type="text"],
-input[type="email"]{
-    width: 80%;
+input[type="email"],
+input[type="number"]{
+    width: 99%;
     padding: 12px;
     border: 2px solid #ccc;
     border-radius: 8px;
     margin: 5px;
 }
 
+#amount{
+    width: 60%;
+    text-align: center;
+}
 /* ok */
 #button-submit{
     background-color: cornflowerblue;

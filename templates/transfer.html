@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-white">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img src="{{url_for('static',filename='logo.png')}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
             <b> RD Banking System </b>
           </a>
@@ -37,24 +37,17 @@
               <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="/transecetion">Transecetion Details</a>
               </li>
-
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
 
-      <!-- alert -->
-      <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>RD banking system.</strong> Transfer Money Page.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-
     <!-- main -->
-    <br><br>
+    <div class="heading">
+      <p>
+        <h2 > Account Details </h2>
+      </p>
+    </div>
     <main >
         <div class="main">
             <table>
@@ -101,7 +94,7 @@
             <p>
                 <h3>Amount : </h3>
             </p>
-            <input type="text" name="amount" id="amount">
+            <input type="number" name="amount" id="amount" required>
             <p>
                 <button type="submit" class="button">Send Money</button>
             </p>
